@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>wangEditor</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/wangEditor.min.css">
+    <script type="text/javascript" src="../javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascripts/wangEditor.min.js"></script>
+    <style type="text/css">
+        #div1 {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon">标题</span>
+            <% if(cont_title) {%>
+                <input type="text" class="form-control" data-id="<%= id %>" placeholder="" id="title" value ="<%= cont_title %>">
+            <% } else { %>
+                            <input type="text" class="form-control" placeholder="" id="title">
+            <% } %>
+        </div>
+        <div id="div1">
+            <% if(content) { %>
+                <%- content %>
+            <% } else {%>
+            <% } %>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" type="button" id="submit">提交</button>
+        </div>
+    </div>
+    
+        <script type="text/javascript">
+        $(function () {
+            var flag = false;
+            var title = $("#title")[0];
+            var editor = new wangEditor('div1');
+            editor.config.uploadImgUrl = '/upload';
+            editor.create();
+            // editor.$txt.html(localStorage.getItem("update"));
+            if(title.value) flag = true;
+            console.log(flag, title.value);
+            $("#submit").click(function(){
+                var html = editor.$txt.html();
+                $.ajax({
+                    url: "/edit",
+                    dataType: "json",
+                    data:{
+                        title: title.value,
+                        tags: "Nastu",
+                        content: html,
+                        id: title.getAttribute("data-id")
+                        // text: editor.$txt.formatText()
+                    },
+                    type: "post",
+                    success: function(){
+                        console.log("success");
+                        title.value = "";
+                        editor.$txt.html("");
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+</html>

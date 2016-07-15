@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #201f1f;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif; }
+
+div::selection, strong::selection {
+  background-color: transparent; }
+
+.container {
+  color: #fff;
+  width: 100%;
+  left: 0;
+  height: 200px;
+  background-color: #e6155a;
+  position: absolute;
+  top: calc(50% - 100px);
+  padding: 0 25%;
+  box-sizing: border-box;
+  line-height: 200px;
+  border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation: shrink 1.7s ease-out;
+  cursor: pointer; }
+  .container strong {
+    float: left;
+    width: 20%;
+    text-align: center;
+    font-size: 4rem;
+    box-sizing: border-box; }
+  .container:hover {
+    box-shadow: 0 0 20px #fff; }
+
+.text {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 10%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: Move; }
+
+@keyframes jump {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-20px); }
+  100% {
+    transform: translateY(0); } }
+@keyframes shrink {
+  0% {
+    background-color: #201f1f;
+    opacity: 0.3;
+    width: 500px;
+    left: calc(50% - 250px); }
+  100% {
+    width: 100%;
+    left: 0;
+    background-color: #e6155a;
+    opacity: 1; } }
+header .head-title, header .description {
+  display: none; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #201f1f;
+  font-weight: light;
+  width: 150px;
+  transition: all 0.5s;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  opacity: 0; }
+  footer:hover {
+    opacity: 1;
+    color: #fff; }
+
+@media screen and (max-width: 425px) {
+  body {
+    font-size: 10px; }
+
+  .text {
+    bottom: 35px;
+    font-size: 1rem; }
+
+  .container strong {
+    font-size: 3rem; }
+
+  footer {
+    font-size: 0.8rem; } }
+
+/*# sourceMappingURL=home.css.map */

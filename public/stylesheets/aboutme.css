@@ -1,0 +1,60 @@
+*{padding: 0;margin: 0;}
+body, html{
+	width: 100%;
+	height: 100%;
+}
+section
+{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top:0; left:0;
+	z-index: -1;
+}
+#particle
+{
+	width: 100%;
+	height: 100%;
+	/*background-color: #e6155a;*/
+	background: -webkit-linear-gradient(top, #201f1f 100%, #e4adbf 100%);
+}
+img
+/*img是行内块元素，因为可以指定高度和宽度*/
+{
+	width: 200px; height: 200px;
+	border-radius: 50%;
+	animation: roll 4s infinite;
+}
+@keyframes roll 
+{
+	0%{transform: rotate(-5deg);}
+	50%{transform: rotate(5deg);}
+	100%{transform: rotate(-5deg);}
+}
+.box
+{
+	position: absolute;
+	width: 500px; height: 300px;
+	top:calc(50% - 200px);
+	left:calc(50% - 250px);
+	text-align: center;
+	color: #fff;
+	font-size: 1.5rem;
+}
+.text
+{
+	padding:5px 0;
+}
+.box:nth-child(2){
+	margin-top: 10px;
+}
+header > p, .head-title
+{
+	display: none;
+}
+@media screen and (max-width: 425px){
+	.text
+	{
+		font-size: 1rem;
+	}
+}

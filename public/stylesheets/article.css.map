@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIE,oBACA;EACC,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,GAAG;AAIhB,uBAAK;EACJ,UAAU,EAAE,IAAI",
+"sources": ["article.scss"],
+"names": [],
+"file": "article.css"
+}

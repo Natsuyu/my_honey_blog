@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/list.css">
+  <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+<div class="bg"></div>
+  <%- include article_head %>
+  <main>
+  <% data.forEach(function(item, index){ %>
+      <div class="content">
+        <h3 class="title"><a href="/document/<%= item._id %>"><%= item.title %></a></h3>
+        <div class="date"><%= item.date.toLocaleDateString() %></div>
+    </div>
+  <% }) %>
+  <div class="page">
+    <% if(start != 0) { %>
+      <span>...</span>
+    <% } %>
+    <% for(var i=start;i<=end;i++) { %>
+      <% if(i == active) {%>
+        <a href="<%= path%><%= i%>" class="page-btn page-ac"><%= i+1 %></a>
+      <%} else {%>
+        <a href="<%= path%><%= i %>" class="page-btn"><%= i+1 %></a>
+    <% }} %>
+    <% if(end != len-1) { %>
+      <span>...</span>
+    <% } %>
+  </div>
+  <%- include archieve %>
+  
+  </main>
+  <%- include footer %>
+<script type="text/javascript" src="/javascripts/listDivPage.js"></script>
+</body>
+</html>

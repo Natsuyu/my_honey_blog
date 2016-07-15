@@ -1,0 +1,8 @@
+  <div class="archieve" id="archieve">
+    <h3 class="title">Archieve</h3>
+    <ul class="nav-date">
+    <% navi.forEach(function(item, index){ %>
+        <li><a href="/archieve/<%= item.date %>/0"><%= item.date %></a></li>
+    <% }) %>
+    </ul>
+  </div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data[0].title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">  
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/article.css">
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  </head>
+  <body>
+  <%- include article_head %>
+    <main>
+      <div class="content">
+        <h2 class="title"><%= data[0].title %></h2>
+        <div class="text"><%- data[0].content %></div>
+      </div>
+    <%- include archieve %>
+    </main>
+    <%- include footer %>
+  </body>
+</html>

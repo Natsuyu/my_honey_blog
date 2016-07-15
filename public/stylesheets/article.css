@@ -1,0 +1,7 @@
+main .content .title {
+  font-size: 4.2rem;
+  font-weight: 300; }
+main .content .text > * {
+  text-align: left; }
+
+/*# sourceMappingURL=article.css.map */

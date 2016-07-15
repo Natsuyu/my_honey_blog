@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>HOME</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+  <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+  <% include article_head %>
+  <a class="container" href="about">
+    <strong>N</strong>
+    <strong>a</strong>
+    <strong>t</strong>
+    <strong>s</strong>
+    <strong>u</strong>
+  </a>
+  <div class="text" id="lyric" disabled=true>这是粉哥特，不是少女心！</div>
+  <footer>
+    <div>Design by HDQ</div>
+  </footer>
+<script type="text/javascript">
+  var dx = 0, dy = 0;
+  var flag = false;
+  var _lyric = $("#lyric").mousedown(function(event){
+    flag = true;
+    var x = event.pageX, y = event.pageY;
+    var cx = $(this).offset().left, cy = $(this).offset().top;
+    console.log(x,y);
+    console.log(cx,cy);
+    dx = x - cx, dy = y - cy;
+  }).mouseup(function(event){
+    flag = false;
+  });
+  $(window).mousemove(function(event){
+    if(flag){
+      _lyric.offset({left: event.pageX - dx, top: event.pageY - dy});
+    }
+  })
+</script>
+
+</body>
+</html>

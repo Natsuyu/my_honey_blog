@@ -1,0 +1,58 @@
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
+main .content .title, main .content .date {
+  height: 30px;
+  line-height: 30px; }
+main .content .preview {
+  height: 100px;
+  width: 100%;
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis-word; }
+  main .content .preview > * {
+    text-align: left; }
+
+header nav {
+  background-color: #f5f5f5; }
+
+.remove, .update, .add {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  float: right;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc; }
+  .remove:hover, .update:hover, .add:hover {
+    background-color: #e6155a;
+    color: #fff;
+    transition: all 0.5s;
+    border: 0;
+    box-shadow: 1px 1px 2px #000; }
+
+.add {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 10px;
+  background-color: #fff; }
+
+.page-btn {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #e6155a;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer; }
+
+.page-ac {
+  background-color: #e6155a;
+  color: #fff; }
+
+/*# sourceMappingURL=list.css.map */

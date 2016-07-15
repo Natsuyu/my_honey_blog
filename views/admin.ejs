@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/list.css">
+  <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+  <%- include article_head %>
+  <main>
+  <span class="add">增加</span>
+  <% data.forEach(function(item, index){ %>
+      <div class="content">
+        <h3 class="title"><a href="/document/<%= item._id %>"><%= item.title %></a></h3>
+        <div class="date">
+          <%= item.date.toLocaleDateString() %>
+          <span class="remove">删除</span><span class="update">修改</span>
+        </div>
+    </div>
+  <% }) %>
+  <%- include archieve %>  
+  </main>
+  <%- include footer %>
+<script type="text/javascript" src="/javascripts/admin.js"></script>
+</body>
+</html>
